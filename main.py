@@ -109,5 +109,14 @@ doc15.ents = [
 ]
 
 
-for doc in [doc1, doc2, doc3, doc4, doc5, doc6, doc7, doc8, doc9, doc10, doc11, doc12, doc13, doc14, doc15]:
+doc16 = nlp("The bowler delivered a bouncer.")
+doc16.ents = [
+    Span(doc16, 1, 2, label="ROLE"),
+    Span(doc16, 3, 4, label="DELIVERY_TYPE"),
+]
+
+
+
+
+for doc in [doc1, doc2, doc3, doc4, doc5, doc6, doc7, doc8, doc9, doc10, doc11, doc12, doc13, doc14, doc15,doc16]:
     print([(ent.text, ent.label_) for ent in doc.ents], f"-- {doc.text}")
